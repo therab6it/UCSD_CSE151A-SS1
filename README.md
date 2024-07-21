@@ -1,0 +1,5 @@
+
+Congressmen are notorious when it comes to deciding the laws of this country – a simple yea/nay vote by less than five hundred individuals can potentially decide the lives of millions of Americans. In this project, we create a machine learning model to predict how a congressman is likely to vote given a particular bill. A large database of bills and the corresponding votes by each congressman are gathered and processed. Various features of the bills, such as their content, sponsors, and historical voting patterns, are taken into account. A sophisticated neural network model is trained using supervised learning on the processed data. Given a new bill, our model predicts how each congressman is likely to vote, which can inform whether a bill is likely to pass. This prediction can be valuable for political analysts, lawmakers, and the general public in understanding legislative dynamics and potential outcomes.
+
+
+**Keywords**: congressional bills and voting, neural network, supervised learning, visualisation
