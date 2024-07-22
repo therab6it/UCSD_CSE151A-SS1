@@ -13,7 +13,7 @@ Keywords: Congressional bills and voting, neural network, supervised learning, v
 
 ## Project Overview
 
-This project aims to predict the voting behavior of congress members on bills using natural language processing (NLP) techniques and machine learning models. The project utilizes BERT and DistilBERT embeddings to process bill text, titles, summaries, committees, cosponsors, and subjects, and employs neural networks and logistic regression models for prediction.
+This project aims to predict the voting behavior of congress members on bills using natural language processing techniques and machine learning models. The project utilizes BERT and DistilBERT embeddings to process bill text, titles, and summaries, while using One Hot Encoding committees, cosponsors, and subjects, and employs neural networks and logistic regression models for prediction.
 
 ## Project Structure
 
@@ -66,11 +66,23 @@ This file includes methods to train and evaluate machine learning models. Key fu
 - `load_model`: Loads a saved model from memory.
 - `predict`: Predicts the outcome of a bill using a trained model.
 
-## Usage
+## datascanning.py
+
+This file includes the methods to go through every single JSON file we scraped from the House and Senate websites to create CSV files of every single congressman's vote position
+
+## addbilldata.py
+
+This file includes methods to retrieve bill information from the congress website through it's publically available API. Many of these methods have been included in `billinfo.py` and have better documentation in that file
+
+## bert.py
+
+This file includes methods to convert text into BERT and/or DistilBERT embeddings. Many of these methods have been included in `billinfo.py` and have better documentation in that file.
+
+## Usage 
 
 ### Preprocessing Data
 
-Use the functions in `preprocess.py` to preprocess the bill data and voting records. The preprocessing steps include extracting relevant information, encoding categorical data, and combining features.
+Use the functions in `preprocess.py` to preprocess the bill data and voting records. The preprocessing steps include extracting relevant information, encoding categorical data, and combining features. Use `get_finished_df` for for the DistilBERT CSV data, and `get_finished_df_large` for the BERT JSON data.
 
 ### Retrieving Bill Information
 
@@ -99,7 +111,18 @@ predict(118, 'hr', 3442, neural_model, congressman, large=large)
 [BERT Large Embeddings](https://drive.google.com/file/d/1SIXCe2fGVnLYC062aPLHVIHMLs7zYksE/view?usp=sharing)
 [DistilBERT Embeddings](https://drive.google.com/file/d/1Mpab1Mc6JTlcQokTGGY3-1169RgY_okD/view?usp=sharing)
 [Congressman Data](https://drive.google.com/drive/folders/1trQ2IgKjsJwroj9lQ55R9QbZYUVTQ1rg?usp=sharing)
+[Official Congress Website Scraper For Scraping Vote Data](https://github.com/unitedstates/congress)
 
+
+## Remarks
+1. Nays were set to 1 to ensure we train on the recall of nays, as it seems to yield the best results
+2. We excluded not voting and present to ensure we get a clean Yay/Nay results as the other 2 categories cannot be indicative of the congressman's position. We aim to predict a congressman's position if he/she were forced to vote, not necessarily whether they would vote or not to begin with.
+3. Model file sizes are 0.5-1GB, so they take up a lot of space, hence we need to either find a way to store/retrieve the models, or find a way to reduce filesize
+4. When we got the DistilBERT embeddings, we saved it as a CSV which unfortunately converted all our lists/arrays into strings and we had to convert it back when importing. After some testing, when saved as a JSON, it doesn't need this extra preprocessing step. Furthermore, BERT Large resulted in 1024 embeddings which got truncated with ... when exported to a CSV. JSON did not have this issue
+5. Senators vote on significantly less legislation(due to the filibuster), thus resulting in very poor metrics for senators compared to representatives
+6. One Hot Key encoding only assigns 1's and 0's to categories present on the specific bills the congressman voted on, not every single bill since it significantly reduces the number of features at the cost of a very minimal hit to accuracy when predicting bills not in the dataset.
+7. The dataset only contains data from the 102nd congress(1991-1993) to the present since the vote data before that is not available on the website
+8. We only included passage and passage under the suspension of rules and veto overrides. Other types of votes include starting/ending sessions, certifying elections, convictions, etc. The other categories do not include bill text and as such we decided not to include them. Regular passage involves getting a majority of votes in the House and Senate(although due to the filibuster, you really need 60 votes aka a 3/5 majority). Passage under the suspension of rules is a procedure in the house where debate can be skipped and the bill can directly be voted on in exchange for requiring a 2/3 majority. Veto overrides are when the president vetoes a bill, and is retured to congress, where if both houses pass the bill again with 2/3 majorities in both chambers, the bill becomes law, thus overriding the president's veto. 
 
 
 ## To Do
