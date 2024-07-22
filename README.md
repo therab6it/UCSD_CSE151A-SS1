@@ -108,9 +108,9 @@ predict(118, 'hr', 3442, neural_model, congressman, large=large)
 
 # Data Downloads:
 
-[BERT Large Embeddings](https://drive.google.com/file/d/1SIXCe2fGVnLYC062aPLHVIHMLs7zYksE/view?usp=sharing)
-[DistilBERT Embeddings](https://drive.google.com/file/d/1Mpab1Mc6JTlcQokTGGY3-1169RgY_okD/view?usp=sharing)
-[Congressman Data](https://drive.google.com/drive/folders/1trQ2IgKjsJwroj9lQ55R9QbZYUVTQ1rg?usp=sharing)
+[BERT Large Embeddings](https://drive.google.com/file/d/1SIXCe2fGVnLYC062aPLHVIHMLs7zYksE/view?usp=sharing)\
+[DistilBERT Embeddings](https://drive.google.com/file/d/1Mpab1Mc6JTlcQokTGGY3-1169RgY_okD/view?usp=sharing)\
+[Congressman Data](https://drive.google.com/drive/folders/1trQ2IgKjsJwroj9lQ55R9QbZYUVTQ1rg?usp=sharing)\
 [Official Congress Website Scraper For Scraping Vote Data](https://github.com/unitedstates/congress)
 
 
