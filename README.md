@@ -66,6 +66,10 @@ This file includes methods to train and evaluate machine learning models. Key fu
 - `load_model`: Loads a saved model from memory.
 - `predict`: Predicts the outcome of a bill using a trained model.
 
+## ms3.ipynb
+
+This file is the same as model.py but in notebook format to view the results of running the model, the training and test errors, and the fitting graph.
+
 ## datascanning.py
 
 This file includes the methods to go through every single JSON file we scraped from the House and Senate websites to create CSV files of every single congressman's vote position
