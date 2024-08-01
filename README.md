@@ -1,3 +1,9 @@
+Link to website: https://coherent-fun-terrier.ngrok-free.app/
+
+Models:https://1drv.ms/f/s!Ap5qpx28L2VGjVdYfKWuQ0dTG5-X?e=obwZuj
+
+
+
 ## Introduction
 
 It is known that five hundred and thirty five congressmen are designated to decide the laws of this country by voting yea/nay. Given the information of a certain bill, it would be beneficial if we can predict the votes of those congressmen, since both the bill’s proponents and the public would respond proactively based on the anticipated outcomes. In this project, we create a machine learning model to predict how a congressman is likely to vote given a particular bill. A large database of bills and the corresponding votes by each congressman are gathered and processed. Various features of the bills, such as their content, sponsors, and historical voting patterns, are taken into account. A sophisticated neural network model is trained using supervised learning on the processed data. Given a new bill, our model predicts how each congressman is likely to vote, which can inform whether a bill is likely to pass. This prediction can be valuable for political analysts, lawmakers, and the general public in understanding legislative dynamics and potential outcomes.
