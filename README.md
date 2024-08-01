@@ -168,6 +168,8 @@ Logan Corrente, coding/writing, helped create scripts to pull data, cleaned code
 
 Vedika, coding/writing, did testing/training, preprocessing, finished part of the report, finalized submissions, notebooks, research
 
+Suraj Laddagiri, coding & writing, built the model, did the training, built the website
+
 ## Citations
 [1] Devlin, Jacob, et al. "Bert: Pre-training of deep bidirectional transformers for language understanding." arXiv preprint arXiv:1810.04805 (2018).
 [2] Sanh, Victor, et al. "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter." arXiv preprint arXiv:1910.01108 (2019).
